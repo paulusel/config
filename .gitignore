@@ -1,0 +1,17 @@
+# This ignore pattern used for user-configuration repo
+# whose working directory is $HOME
+#
+# Ignore all files cause this repo uses whitelist method
+/**/**
+
+# unignore files starting with .(dot)
+#!/.*
+!/.gitignore
+!/.config/
+!/.config/**/*
+
+# But ignore these
+#/.cache/
+#/.conan/
+#/.cert/
+
