@@ -1,0 +1,11 @@
+mode=drun
+normal_window=true
+lines=10
+prompt=
+width=40%
+hide_scroll=true
+term=alacritty
+allow_images=true
+image_size=22
+no_actions=true
+insensitive=true

@@ -1,0 +1,15 @@
+#
+# A wofi config to work with mpd music and playlist selection
+# works in dmenu mode
+#
+mode=dmenu
+lines=10
+prompt=
+width=30%
+hide_scroll=true
+term=
+allow_images=false
+insensitive=true
+location=top_right
+xoffset=-200
+#dynamic_lines=true
