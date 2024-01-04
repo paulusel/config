@@ -1,0 +1,99 @@
+{
+    "layer": "top",
+    "position": "top",
+    "exclusive": true,
+    "height": 24,
+    "spacing": 0,
+    "modules-left": ["tray", "hyprland/workspaces", "hyprland/language", "hyprland/submap"],
+    "modules-center": [],
+    "modules-right": ["network", "backlight", "pulseaudio#mic", "pulseaudio", "cpu", "memory", "disk", "clock", "battery"],
+    "hyprland/workspaces": {
+          "format": "{name}",
+          "sort-by-number": true
+        },
+    "hyprland/language": {
+          "format": "{}",
+          "keyboard-name": "at-translated-set-2-keyboard"
+        },
+    "hyprland/submap": {
+          "format": "{}",
+          "max-length": 8,
+          "tooltip": false
+        },
+    "battery": {
+         "states": {
+            "good": 50,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+         "interval": 1,
+         "timezone": "Africa/Addis_Ababa",
+         "format": "{:%a %Y-%m-%d   %I:%M  }"
+    },
+    "tray": {
+         "icon-size": 22,
+         "spacing": 2 
+    },
+    "network": {
+        "interval": 1,
+        "format-wifi": "{bandwidthDownOctets}  {bandwidthUpOctets}  {essid} ({signalStrength}%) ",
+        "format-ethernet": "{bandwidthDownOctets} {bandwidthUpOctets} {ifname} ",
+        "format-linked": "{ifname} ",
+        "format-disconnected": "",
+        "tooltip-format-disconnected": "No Internet!"
+    },
+    "network#wifi": {
+         "interval": 1,
+         "interface": "wlan0",
+         "format-disconnected": "", 
+         "format-wifi": "{bandwidthDownBits} {bandwidthUpBits} {essid} {signalStrength}"
+    },
+    "network#ethernet": {
+         "interface": "wlan0",
+         "format-disconnected": "", 
+         "format-wifi": "{bandwidthDownOctets} {bandwidthUpOctets} {essid} {signalStrength}",
+         "tooltip-format-wifi": "{ifname} {ipaddr}"
+    },
+    "disk": {
+         "path": "/",
+         "format": "{used}  "
+    },
+    "backlight": {
+         "device": "intel_backlight",
+         "format": "{percent}% {icon}",
+         "format-icons": [""]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "{format_source}  ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["\uf027", "\uf028"]
+        },
+     },
+     "pulseaudio#mic": {
+        "format": "{format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "0% ",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "tooltip": false
+    },
+    "memory": {
+          "format": "{percentage}% "
+    },
+    "cpu": {
+          "interval": 2,
+          "format": "{usage}% "
+    }
+}
