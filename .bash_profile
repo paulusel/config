@@ -2,16 +2,12 @@
 # ~/.bash_profile
 #
 
-# Append MatLab bin directory to path
-# export PATH="$PATH:~/MATLAB/R2022a/bin"
-
-# Append ~/.local/bin directory to PATH
-# export PATH="$PATH:~/.local/bin"
-
 [[ -f ~/.bashrc ]] && . "$HOME/.bashrc"
 
 #eval $(gnome-keyring-daemon --start)
 #export SSH_AUTH_SOCK
+# Append ~/.local/bin directory to PATH
+export PATH="$PATH:$HOME/.local/bin"
 #
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
