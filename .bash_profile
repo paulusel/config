@@ -1,4 +1,3 @@
-#
 # ~/.bash_profile
 #
 
@@ -7,7 +6,7 @@
 #eval $(gnome-keyring-daemon --start)
 #export SSH_AUTH_SOCK
 # Append ~/.local/bin directory to PATH
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/cargo/bin"
 #
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -60,4 +59,5 @@ export GPG_TTY
 # export QSYS_ROOTDIR="/home/paulo/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/20.1/quartus/sopc_builder/bin"
 
 # Synchronize environment variables with systemd and dbus
+eval "$(leetcode completions)"
 dbus-update-activation-environment --systemd --all
