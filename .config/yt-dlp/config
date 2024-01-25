@@ -1,5 +1,5 @@
 # Youtube-dl configuration file
 
 --restrict-filenames
---output-na-placeholder ""
--o ~Downloads/Youtube/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s
+--output-na-placeholder "Singles"
+-o ~/Downloads/Youtube/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s

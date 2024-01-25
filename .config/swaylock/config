@@ -1,0 +1,5 @@
+ignore-empty-password
+show-failed-attempts
+daemonize
+image=~/Pictures/Wallpapers/0240.jpg
+scaling=fill

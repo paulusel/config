@@ -1,0 +1,42 @@
+[user]
+	name = paulusel
+	email = paulusel@proton.me
+	signingKey = D434DFEDE5FC10D9628B717015FB326CE9B6E653
+[core]
+	excludesFile = /home/polin/.config/git/gitignore
+	editor = vim
+	pager = nvimpager
+	autocrlf = input
+[init]
+	defaultBranch = main
+[commit]
+	gpgSign = false
+[merge]
+	conflictStyle = diff3
+[credential]
+	helper = cache --timeout 1800
+	helper = !pass-git-helper $@
+	useHttpPath = true
+[pull]
+	rebase = false
+[clean]
+	requireForce = true
+[rerere]
+	enabled = true
+[completion]
+	commands = -l
+[diff]
+	submodule = log
+[status]
+	submoduleSummary = true
+[submodule]
+	recurse = true
+[push]
+	recurseSubmodules = on-demand
+[filter "cryptme"]
+	smudge = gpg2 -d --quiet --yes --compress-algo=none --no-encrypt-to --batch 2>/dev/null
+	clean = gpg2 -se --quiet --yes --compress-algo=none -r 0xCCD8F43B08D864DCEE0A3672D3C02C034EEAB0D8 -u 0x8AD1E772B79F40FC0CE5048F576104C8775683FA
+	required = true
+[diff "cryptme"]
+	textconv = gpg2 -d --quiet --yes --compress-algo=none --no-encrypt-to --batch
+	binary = true

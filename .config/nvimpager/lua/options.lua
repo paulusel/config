@@ -1,0 +1,20 @@
+local opt = vim.opt
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+opt.autowrite = true -- Enable auto write
+opt.clipboard = "unnamedplus" -- Sync with system clipboard
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.formatoptions = "jcroqlnt" -- tcqj
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+opt.ignorecase = true -- Ignore case
+opt.inccommand = "nosplit" -- preview incremental substitute
+opt.incsearch = true
+opt.laststatus = 0
+opt.list = true -- Show some invisible characters (tabs...
+opt.mouse ="" -- disable mouse mode
+opt.number = true -- Print line number
+opt.relativenumber = true -- Relative line numbers
+opt.scrolloff = 5 -- Lines of context
+opt.spelllang = { "en" }

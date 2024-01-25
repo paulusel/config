@@ -3,6 +3,7 @@
 # works in dmenu mode
 #
 mode=dmenu
+normal_window=false
 lines=10
 prompt=
 width=30%
@@ -11,5 +12,6 @@ term=
 allow_images=false
 insensitive=true
 location=top_right
-xoffset=-200
+xoffset=-20
+yoffset=20
 #dynamic_lines=true

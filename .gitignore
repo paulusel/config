@@ -7,8 +7,10 @@
 # unignore files starting with .(dot)
 #!/.*
 !/.gitignore
+!/.bashrc
+!/.bash_profile
 !/.config/
-!/.config/**/*
+!/.config/**/**
 
 # But ignore these
 #/.cache/
