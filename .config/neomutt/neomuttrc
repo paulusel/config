@@ -1,0 +1,17 @@
+# vim: filetype=muttrc
+
+source $XDG_CONFIG_HOME/neomutt/settings
+source $XDG_CONFIG_HOME/neomutt/colors
+source $XDG_CONFIG_HOME/neomutt/mappings
+
+# Accounts
+
+source $XDG_CONFIG_HOME/neomutt/accounts/gmail
+folder-hook $folder 'source ~/.config/neomutt/accounts/gmail'
+
+source $XDG_CONFIG_HOME/neomutt/accounts/school
+folder-hook $folder 'source ~/.config/neomutt/accounts/school'
+
+source $XDG_CONFIG_HOME/neomutt/accounts/outlook
+folder-hook $folder 'source ~/.config/neomutt/accounts/outlook'
+
