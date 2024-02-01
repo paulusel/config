@@ -1,0 +1,4 @@
+set adjust-open width
+set selection-clipboard clipboard
+set continuous-hist-save true
+set database sqlite
