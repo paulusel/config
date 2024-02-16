@@ -2,3 +2,8 @@ set adjust-open width
 set selection-clipboard clipboard
 set continuous-hist-save true
 set database sqlite
+set show-recent 30
+set show-directories false
+set guioptions ""
+unmap <Button2>
+map = zoom in
