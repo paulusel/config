@@ -18,6 +18,7 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/Projects/polin/config --work-tree=$HOME'
+alias dn='dnote'
 
 PS1=' \$ '
 
