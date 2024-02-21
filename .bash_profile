@@ -20,7 +20,7 @@ export W3M_DIR="$XDG_STATE_HOME/w3m"
 export GOPATH="$XDG_DATA_HOME"/go
 export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 export PASSWORD_STORE_DIR="$HOME/Projects/polin/pass-database"
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 export RCLONE_PROGRESS=true
 
