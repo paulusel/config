@@ -80,9 +80,9 @@ local opts = {
 
 local mappings = {
 
-    ["n"] = { "<cmd>bnext<CR>", "Next Buffer" }, -- Move to next buffer
-    ["v"] = { "<cmd>bprevious<CR>", "Previous Buffer" }, -- Move to Previous Buffer
-    ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
+    ["l"] = { "<cmd>bnext<CR>", "Next Buffer" }, -- Move to next buffer
+    ["h"] = { "<cmd>bprevious<CR>", "Previous Buffer" }, -- Move to Previous Buffer
+    ["x"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
@@ -125,7 +125,7 @@ local mappings = {
     },
 
 -- lsp keybindings in whichkey.lua
-      l = {
+      z = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         i = { "<cmd>LspInfo<cr>", "Info" },
