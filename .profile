@@ -21,7 +21,6 @@ export GOPATH="$XDG_DATA_HOME"/go
 export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 export PASSWORD_STORE_DIR="$HOME/Projects/polin/pass-database"
 export QT_QPA_PLATFORMTHEME=qt6ct
-
 export RCLONE_PROGRESS=true
 
 #if command -v ibus > /dev/null; then
@@ -34,29 +33,20 @@ export RCLONE_PROGRESS=true
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
     export QT_QPA_PLATFORM=wayland
+    export _JAVA_AWT_WM_NONREPARENTING=1
     export CLUTTER_BACKEND=wayland
 fi
-
-# sway and xmonad are non-parenting WMs. Java apps need this variable to run well.
-if [ "$DESKTOP_SESSION" = "sway" ] || [ "$DESKTOP_SESSION" = "xmonad" ]; then
-    export _JAVA_AWT_WM_NONREPARENTING=1
-fi
-
 
 export XDG_PICTURES_DIR="$HOME/Pictures"
 export EDITOR="/usr/bin/vim"
 export PAGER="/usr/bin/nvimpager"
 export VISUAL="/usr/bin/nvimpager"
-#export MOZ_ENABLE_WAYLAND=1
-#export QT_QPA_PLATFORM=wayland
 
 # VA-API driver variable for hardware axeleration
 # export LIBVA_DRIVER_NAME=i915
 
 GPG_TTY=$(tty)
 export GPG_TTY
-
-# export QSYS_ROOTDIR="/home/paulo/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/20.1/quartus/sopc_builder/bin"
 
 # Synchronize environment variables with systemd and dbus
 eval "$(leetcode completions)"
