@@ -6,4 +6,9 @@ set show-recent 30
 set show-directories false
 set guioptions ""
 unmap <Button2>
+unmap <Button2>
+unmap [normal] <F11>
+unmap [fullscreen] <F11>
 map = zoom in
+map [normal] f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
