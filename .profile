@@ -48,6 +48,9 @@ export VISUAL="/usr/bin/nvimpager"
 GPG_TTY=$(tty)
 export GPG_TTY
 
+#ssh agent
+#eval $(ssh-agent)
+
 # Synchronize environment variables with systemd and dbus
-eval "$(leetcode completions)"
+#eval "$(leetcode completions)"
 dbus-update-activation-environment --systemd --all
