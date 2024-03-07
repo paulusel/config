@@ -86,13 +86,17 @@ local mappings = {
     ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    ["e"] = { "<cmd>Neotree toggle<cr>", "Explorer" },
     ["m"] = { "<cmd>Mason<cr>", "Mason UI for Lsp" },
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
- -- Space + a will invoke Alpha.
-    ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
---Toggle Term
+
+    -- Change Directories
+    c = {
+        name = "Goto",
+        d = { "<cmd>CdProject<cr>", "Goto directory" },
+    },
+    --Toggle Term
     t = {
         name = "Terminal",
         n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" }, -- NodeJS Terminal

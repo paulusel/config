@@ -1,6 +1,6 @@
 return {
+    -- The mighty Telescope
     {
-            -- The mighty Telescope
         "nvim-telescope/telescope.nvim", tag = "0.1.4",
         lazy = true, 
         dependencies = {
@@ -8,17 +8,20 @@ return {
         }
     },
 
+--[[
+    -- Quickly Changing working directory with telescope
     {
         "zane-/cder.nvim",
     },
+]]
 
-    -- Zen Mode ==== Useful for focusing
+    -- Zen Mode Useful for focusing
     {
-    "folke/zen-mode.nvim",
-    lazy = true,
-    opts = {
-    -- your configuration comes here
-    }
+        "folke/zen-mode.nvim",
+        lazy = true,
+        opts = {
+        -- configuration comes here
+        }
     },
 
     {
@@ -36,11 +39,13 @@ return {
         build = function() vim.fn["mkdp#util#install"]() end,
     },
 
+--[[
     --nerdcommenter +++ Insane level of commenting power
     {
         "preservim/nerdcommenter",
         lazy = false,
     },
+]]
 
     --Toggleterm - A nice terminal
     {
@@ -52,28 +57,30 @@ return {
 
     --Which-key ** Awsome keybindings manager
     {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-    end,
-    opts = {
-        -- configuration comes here
-    }
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {
+            -- configuration comes here
+        }
     },
 
+    -- Treesitter
     {
-    "nvim-treesitter/nvim-treesitter",
+        "nvim-treesitter/nvim-treesitter",
     },
 
-    -- Nvimtree (File Explorer)
+--[[    -- Nvimtree (File Explorer)
     {
     'nvim-tree/nvim-tree.lua',
         dependencies = {
         'nvim-tree/nvim-web-devicons',
     },
     },
+]]
 
     -- Language Support
     {
@@ -115,13 +122,34 @@ return {
     opts = {},
     },
 
-    -- Bufferline
+--[[    -- Bufferline
     {
     'akinsho/bufferline.nvim',
         dependencies = {
         'nvim-tree/nvim-web-devicons'
         },
     },
+]]
+
+--[[
+    -- Table line at top - barbar
+    {
+        'romgrk/barbar.nvim',
+        dependencies = {
+        'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+        'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {
+        -- animation = true,
+        -- insert_at_start = true,
+            sidebar_filetypes = {
+                ['neo-tree'] = {event = 'BufWipeout'},
+            },
+        },
+        version = '^1.7.0', -- optional: only update when a new 1.x version is released
+    },
+]]
 
     --Telescope needs this one for searching
     {
@@ -129,7 +157,7 @@ return {
         build = 'make'
     },
 
-    -- Buffer Bar at the top
+--[[
     {
         'goolord/alpha-nvim',
         lazy = true,
@@ -141,6 +169,7 @@ return {
     {
         'tpope/vim-fugitive'
     },
+]]
 
     --Code Runner
     {
@@ -176,5 +205,43 @@ return {
         end
     },
 
-}
+    -- Changing project directories
+    {
+        "LintaoAmons/cd-project.nvim",
+        config = function()
+        require("cd-project").setup({
+            project_dir_pattern = { ".git", ".gitignore", "Cargo.toml", "package.json", "go.mod" },
+            choice_format = "both",
+            projects_picker = "telescope",
+        })
+        end,
+    },
 
+    -- Directory Explorer
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+        }
+    },
+
+    {
+        "willothy/nvim-cokeline",
+        dependencies = {
+            "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+            "nvim-tree/nvim-web-devicons", -- Devicons
+            --"stevearc/resession.nvim"       -- Optional, for persistent history
+        },
+        config = true
+    },
+
+    {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    },
+
+}
