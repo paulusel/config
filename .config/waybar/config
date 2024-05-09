@@ -33,7 +33,6 @@
     },
     "clock": {
          "interval": 1,
-         "timezone": "Africa/Addis_Ababa",
          "format": "{:%a %Y-%m-%d   %I:%M  }"
     },
     "tray": {
