@@ -8,13 +8,6 @@ return {
         }
     },
 
---[[
-    -- Quickly Changing working directory with telescope
-    {
-        "zane-/cder.nvim",
-    },
-]]
-
     -- Zen Mode Useful for focusing
     {
         "folke/zen-mode.nvim",
@@ -73,15 +66,6 @@ return {
         "nvim-treesitter/nvim-treesitter",
     },
 
---[[    -- Nvimtree (File Explorer)
-    {
-    'nvim-tree/nvim-tree.lua',
-        dependencies = {
-        'nvim-tree/nvim-web-devicons',
-    },
-    },
-]]
-
     -- Language Support
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -122,54 +106,11 @@ return {
     opts = {},
     },
 
---[[    -- Bufferline
-    {
-    'akinsho/bufferline.nvim',
-        dependencies = {
-        'nvim-tree/nvim-web-devicons'
-        },
-    },
-]]
-
---[[
-    -- Table line at top - barbar
-    {
-        'romgrk/barbar.nvim',
-        dependencies = {
-        'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-        'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-        },
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = {
-        -- animation = true,
-        -- insert_at_start = true,
-            sidebar_filetypes = {
-                ['neo-tree'] = {event = 'BufWipeout'},
-            },
-        },
-        version = '^1.7.0', -- optional: only update when a new 1.x version is released
-    },
-]]
-
     --Telescope needs this one for searching
     {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make'
     },
-
---[[
-    {
-        'goolord/alpha-nvim',
-        lazy = true,
-        dependencies = {
-        'nvim-tree/nvim-web-devicons'
-        },
-    },
-
-    {
-        'tpope/vim-fugitive'
-    },
-]]
 
     --Code Runner
     {
@@ -182,7 +123,7 @@ return {
                         "javac $fileName &&",
                         "java $fileNameWithoutExt"
                     },
-                    python = "python3 -u",
+                    python = "python -u",
                     typescript = "deno run",
                     rust = {
                         "cd $dir &&",
@@ -196,7 +137,7 @@ return {
                         },
                     cpp = {
                         "cd $dir &&",
-                        "g++ -std=c++20 $fileName -o $fileNameWithoutExt &&",
+                        "g++ -std=c++23 $fileName -o $fileNameWithoutExt &&",
                         "$dir/$fileNameWithoutExt",
                         },
                     sh = "bash",
@@ -243,5 +184,36 @@ return {
         event = 'VimEnter',
         dependencies = { {'nvim-tree/nvim-web-devicons'}}
     },
+
+    {
+        'dense-analysis/ale',
+        config = function()
+            local g = vim.g
+
+            -- g.ale_ruby_rubocop_auto_correct_all = 1
+
+            g.ale_linters = {
+                -- ruby = {'rubocop', 'ruby'},
+                cpp = {'clangd'},
+                lua = {'lua_language_server'}
+            }
+        end
+    },
+
+    {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
+    },
+
+    {
+    "lervag/vimtex",
+    lazy = false,     -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+        -- VimTeX configuration goes here
+    end
+    }
 
 }
