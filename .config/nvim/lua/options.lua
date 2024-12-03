@@ -2,6 +2,7 @@ local opt = vim.opt
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"
@@ -44,6 +45,7 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
-vim.opt.termguicolors = true
+opt.termguicolors = true
+
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0

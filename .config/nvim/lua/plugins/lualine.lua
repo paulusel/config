@@ -1,12 +1,17 @@
---lualine configuration from github repo
-require('lualine').setup {
+---[[
+
+-- Lualine -- a nice statusline
+
+-- **************** CONFIG ***************
+
+local config = {
   options = {
     icons_enabled = true,
     theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
-      statusline = {},
+      statusline = {'dashboard',},
       winbar = {},
     },
     ignore_focus = {},
@@ -39,3 +44,15 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+
+-- ***************** RETURN *************
+
+return {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+        'nvim-tree/nvim-web-devicons'
+    },
+    opts = config
+}
+
+--]]

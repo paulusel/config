@@ -1,23 +1,11 @@
---Init file for lua
+--Init file for Nvim
 --Just used for sourcing other files
-vim.g.mapleader = ' '
 
-require "lazy-config"
+--Nvim options. This has to be loaded FIRST.
+require("options")
+
+--Lazy - Plugin manager. Must be loaded SECOND
+require("config.lazy")
+require('config.lsp')
+
 vim.cmd[[ colorscheme tokyonight-night ]]
-
-require "options"
--- require "nvim-tree-config"
-require "autopairs-config"
---require "keymaps"
---require "alpha-config"
--- require "bufferline-config"
-require "lualine-config"
-require "lsp-config"
-require "telescope-config"
-require "toggleterm-config"
-require "treesitter-config"
-require "whichkey-config"
-
-require('lualine').setup()
---require("nvim-tree").setup()
-require("mason").setup()
