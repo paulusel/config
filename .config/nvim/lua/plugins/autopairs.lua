@@ -1,6 +1,6 @@
----[[
 
 -- *********************** CONFIG ********************
+---[[
 local config = {
   check_ts = true,
   ts_config = {
@@ -21,16 +21,28 @@ local config = {
     highlight_grey = "LineNr",
   },
 }
+--]]
+
+local autopairs_opts = {
+  modes = { insert = true, command = true, terminal = false },
+  -- skip autopair when next character is one of these
+  skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
+  -- skip autopair when the cursor is inside these treesitter nodes
+  skip_ts = { "string" },
+  -- skip autopair when next character is closing pair
+  -- and there are more closing pairs than opening pairs
+  skip_unbalanced = true,
+  -- better deal with markdown code blocks
+  markdown = true,
+}
 
 -- ******************** RETURN ***********************
 return {
-    -- Autopairs
-    {
-        "windwp/nvim-autopairs",
-        lazy = true,
-        event = "InsertEnter",
-        opts = config
-    }
+    "windwp/nvim-autopairs",
+    name = 'autopairs',
+    lazy = true,
+    event = "InsertEnter",
+    opts = autopairs_opts
 }
 
 --]]

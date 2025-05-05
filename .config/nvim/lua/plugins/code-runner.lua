@@ -4,9 +4,16 @@ return {
     --Code Runner
     "CRAG666/code_runner.nvim",
     opts = {
-        mode = toggleterm,
+        mode = "float",
+        float = {
+            border = "rounded",
+        },
         focus = true,
         filetype = {
+            php = {
+                "cd $dir &&",
+                "php $fileName",
+            },
             java = {
                 "cd $dir &&",
                 "javac $fileName &&",
@@ -24,7 +31,7 @@ return {
             },
             c = {
                 "cd $dir &&",
-                "gcc $fileName -o $fileNameWithoutExt &&",
+                "gcc -std=c23 -lstdc++exp $fileName -o $fileNameWithoutExt &&",
                 "$dir/$fileNameWithoutExt",
                 },
             cpp = {

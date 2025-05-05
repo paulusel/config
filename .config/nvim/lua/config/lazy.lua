@@ -36,7 +36,7 @@ local config = {
 }
 
 -- Setup lazy.nvim
-require("lazy").setup(config)
+require('lazy').setup(config)
 
 --[[
 default_config = {

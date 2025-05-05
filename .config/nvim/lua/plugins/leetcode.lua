@@ -45,6 +45,8 @@ local conf = {
 
     ---@type lc.lang
     lang = "cpp",
+    --lang = "c",
+    --lang = "python3",
 
     cn = { -- leetcode.cn
         enabled = false, ---@type boolean
@@ -73,6 +75,16 @@ local conf = {
         ["cpp"] = {
             before = { "#include <bits/stdc++.h>", "","using namespace std;",},
             after = {"int main() {", "","}"},
+        },
+        ["c"] = {
+            before = {"#include <stdio.h>", "#include <stdlib.h>", "#include <string.h>", "#include <math.h>", "#include <time.h>", "#include <ctype.h>", "#include <assert.h>"},
+            after = { "int main(int argc, char* argv[])", "{", "", "}"}
+        },
+        ["rust"] = {
+
+        },
+        ["golang"] = {
+
         },
         ["java"] = {
             before = "import java.util.*;",
